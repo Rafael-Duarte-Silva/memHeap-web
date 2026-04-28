@@ -26,6 +26,7 @@ type TypographyProps<T extends ElementType> = PolymorphicProps<
 export const Typography = <T extends ElementType = "p">({
   as,
   className,
+  variant,
   children,
   ...props
 }: TypographyProps<T>) => {
@@ -35,6 +36,7 @@ export const Typography = <T extends ElementType = "p">({
     <Component
       className={typography({
         className,
+        variant,
       })}
       {...props}
     >
