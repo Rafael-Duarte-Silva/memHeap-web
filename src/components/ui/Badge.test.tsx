@@ -3,40 +3,43 @@ import { Badge } from "./Badge";
 import { UiTestsSuite } from "@/tests/utils/UiTestsSuite";
 
 describe("Badge", () => {
-  UiTestsSuite({
-    component: Badge,
-    displayName: "Badge",
-    defaultTag: "div",
-    text: "Test Badge",
-  });
+    UiTestsSuite({
+        component: Badge,
+        displayName: "Badge",
+        defaultTag: "div",
+        text: "Test Badge",
+    });
 
-  it("applies default variants", () => {
-    render(<Badge>Default</Badge>);
+    it("applies default variants", () => {
+        render(<Badge>Default</Badge>);
 
-    const el = screen.getByText("Default");
+        const el = screen.getByText("Default");
 
-    expect(el.className).toMatch(/bg-neutral-900/);
-    expect(el.className).toMatch(/px-4/); // md size
-  });
+        expect(el.className).toMatch(/bg-neutral-900/);
+        expect(el.className).toMatch(/px-4/); // md size
+    });
 
-  it("applies size correctly", () => {
-    render(<Badge size="sm">Small</Badge>);
+    it("applies size correctly", () => {
+        render(<Badge size="sm">Small</Badge>);
 
-    const el = screen.getByText("Small");
+        const el = screen.getByText("Small");
 
-    expect(el.className).toMatch(/px-3/);
-    expect(el.className).toMatch(/text-xs/);
-  });
+        expect(el.className).toMatch(/px-3/);
+        expect(el.className).toMatch(/text-xs/);
+    });
 
-  it("passes props correctly", () => {
-    render(
-      <Badge as="a" href="/test">
-        Link
-      </Badge>,
-    );
+    it("passes props correctly", () => {
+        render(
+            <Badge
+                as="a"
+                href="/test"
+            >
+                Link
+            </Badge>,
+        );
 
-    const el = screen.getByText("Link");
+        const el = screen.getByText("Link");
 
-    expect(el).toHaveAttribute("href", "/test");
-  });
+        expect(el).toHaveAttribute("href", "/test");
+    });
 });
