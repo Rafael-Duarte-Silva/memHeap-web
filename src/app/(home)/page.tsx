@@ -1,6 +1,6 @@
-import { Badge } from "@/src/components/layout/ui/Badge";
-import { Button } from "@/src/components/layout/ui/Button";
-import { H1, H2, Paragraph } from "@/src/components/layout/ui/Typography";
+import { Badge } from "@/src/components/ui/Badge";
+import { Button } from "@/src/components/ui/Button";
+import { H1, H2, Paragraph } from "@/src/components/ui/Typography";
 import Link from "next/link";
 
 export default function HomePage() {
